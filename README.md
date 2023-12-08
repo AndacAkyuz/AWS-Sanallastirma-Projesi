@@ -80,7 +80,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     
     COPY . /usr/local/apache2/htdocs/
     
-    '---'
+    ___
     
     Çıkış yapmak için esc tuşuna basın, :wq! yazın ve enter tuşuna basın.
 
