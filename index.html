@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şifre Güçlülük Kontrolü</title>
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <style>
+    body {
+      background-image: url('images/background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Sayfa kaydırıldığında arka planın sabit kalmasını sağlar */
+      background-color: #808080;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    h1 {  /* Ana başlık Şifre Güçlülük Kontrolü */
+      text-align: center;
+      color: darkred;
+    }
+    #password-strength {
+      margin-top: 20px;
+    }
+    .strength-bar {  /* Şifre barı */
+      height: 20px;
+      margin-top: 10px;
+      background-color: #ccc;
+    }
+    .weak {
+      width: 25%;
+      background-color: #fc1004;
+    }
+    .medium {
+      width: 50%;
+      background-color: #e0b24d;
+    }
+    .strong {
+      width: 75%;
+      background-color: #90ee90;
+    }
+    .very-strong {
+      width: 100%;
+      background-color: #00ff37;
+    }
+    .checkmark {   /* Tik */
+      color: #2ecc71;
+      font-size: 1.2em;
+      margin-left: 5px;
+    }
+    #password { /* Şifre ekranı  */
+      width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 2px solid #000000;
+      border-radius: 5px;
+      background-color: #f8f8f8;
+      color: #333;
+      font-family: Arial, sans-serif;
+    }
+    
+    #password:focus {   /* Şifreyi girerkenki ekranın özellikleri */
+      outline: none;
+      border-color: #6f6f6f;
+      box-shadow: 0 0 5px rgba(65, 65, 65, 0.5);
+    }
+    button {  /* Butonların ayarları */
+      padding: 10px 15px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    
+    button:hover {
+      background-color: #363636; /* Butonun üstüne geldiğinide renk */
+    }
+
+    #saved-passwords h2 {   /* Kayıtlı Şifrelerin altı çizilmesi */
+      text-decoration: underline;
+    }
+
+    .security-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ff0000;
+      text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div style="text-align: center;">
+    <img src="images/favicon.png" alt="" width="250" height="250">
+    <h1>Şifre Güçlülük Kontrolü</h1>
+  </div>
+  <ul class="list-unstyled">
+    <div class="password-requirement">
+      <strong>Güçlü Şifre İçin Gerekenler:</strong>
+    </div>
+    <li class="">
+        <span class="low-upper-case">
+            <i class="fas fa-circle" aria-hidden="true"></i>
+            &nbsp;Küçük Harf &amp; Büyük Harf
+        </span>
+    </li>
+    <li class="">
+        <span class="one-number">
+            <i class="fas fa-circle" aria-hidden="true"></i>
+            &nbsp;Sayı (0-9)
+        </span> 
+    </li>
+    <li class="">
+        <span class="one-special-char">
+            <i class="fas fa-circle" aria-hidden="true"></i>
+            &nbsp;Özel Karakter (!@#$%^&*)
+        </span>
+    </li>
+    <li class="">
+        <span class="eight-character">
+            <i class="fas fa-circle" aria-hidden="true"></i>
+            &nbsp;En az 8 Karakter
+        </span>
+    </li>
+</ul>
+<hr>
+  <label for="password">Şifrenizi Giriniz :</label>
+  <input type="password" id="password" oninput="checkPasswordStrength(this.value)">
+  <button onclick="togglePasswordVisibility()">Şifreyi Gizle</button>
+  <button onclick="strengthenPassword()">Şifreyi Güçlendir</button>
+  <button onclick="copyToClipboard()">Panoya Kopyala</button>
+  <button onclick="savePassword()">Şifreyi Kaydet</button>
+  
+
+  <div id="password-strength">
+    <div class="strength-bar weak"></div>
+    <p>Şifre Gücü: <span id="strength-text">Çok Zayıf</span></p>
+    <p>Şifre Kompozisyonu: <span id="composition-text">Büyük harf, küçük harf, sayı ve özel karakterler kullanın</span></p>
+  </div>
+
+  <div id="saved-passwords">
+    <h2>Kayıtlı Şifreler</h2>
+    <ul id="password-list"></ul>
+  </div>
+  <button onclick="downloadPasswords()">Kayıtlı Şifreleri İndir</button>
+  <script>
+    function checkPasswordStrength(password) {
+      var strengthBar = document.querySelector('.strength-bar');
+      var strengthText = document.querySelector('#strength-text');
+      var compositionText = document.querySelector('#composition-text');
+
+      var securityInfo = document.getElementById('security-info');
+
+      var regexLower = /[a-z]/;
+      var regexUpper = /[A-Z]/;
+      var regexNumber = /\d/;
+      var regexSpecial = /[@$!%*?&]/;
+
+      var hasLower = regexLower.test(password);
+      var hasUpper = regexUpper.test(password);
+      var hasNumber = regexNumber.test(password);
+      var hasSpecial = regexSpecial.test(password);
+
+      var checkmarkLower = hasLower ? '✔' : '✘';  
+      var checkmarkUpper = hasUpper ? '✔' : '✘';
+      var checkmarkNumber = hasNumber ? '✔' : '✘';
+      var checkmarkSpecial = hasSpecial ? '✔' : '✘';
+
+      var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+      if (regex.test(password)) {
+        strengthBar.className = 'strength-bar very-strong';
+        strengthText.innerHTML = 'Çok Güçlü<span class="checkmark">✔</span>';
+        compositionText.textContent = 'Harika iş! Şifreniz çok güçlü.';
+      } else if (password.length >= 8 && (hasLower || hasUpper) && hasNumber) {
+        strengthBar.className = 'strength-bar strong';
+        strengthText.innerHTML = 'Güçlü<span class="checkmark">✔</span>';
+        compositionText.textContent = 'İyi! Şifreniz güçlü. Özel karakterler eklemeyi düşünün.';
+      } else if (password.length >= 8 && (hasLower || hasUpper)) {
+        strengthBar.className = 'strength-bar medium';
+        strengthText.innerHTML = 'Orta<span class="checkmark">✘</span>';
+        compositionText.textContent = 'Kötü değil! Şifreniz daha güçlü olabilir. Sayı ve özel karakter eklemeyi düşünün.';
+      } else if (password.length >= 8) {
+        strengthBar.className = 'strength-bar weak';
+        strengthText.innerHTML = 'Zayıf<span class="checkmark">✘</span>';
+        compositionText.textContent = 'Şifreniz zayıf. Daha güçlü hale getirmek için büyük harfler, küçük harfler, sayılar ve özel karakterler ekleyin.';
+      } else {
+        strengthBar.className = 'strength-bar weak';
+        strengthText.innerHTML = 'Çok Zayıf<span class="checkmark">✘</span>';
+        compositionText.textContent = 'Şifreniz çok zayıf. Daha fazla karakter ekleyerek güçlendirin.';
+      }
+      
+
+      compositionText.innerHTML += `<br>
+        Büyük Harf ${checkmarkUpper},   <br>
+        Küçük Harf ${checkmarkLower},   <br>
+        Sayı ${checkmarkNumber},     <br>
+        Özel Karakter ${checkmarkSpecial}`;  
+    }
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    }
+    
+    function copyToClipboard() {
+      var passwordInput = document.getElementById('password');
+      passwordInput.select();
+      document.execCommand('copy');
+      alert('Şifre panoya kopyalandı!');
+    }
+
+    function savePassword() {
+      var passwordInput = document.getElementById('password');
+      var savedPasswords = localStorage.getItem('savedPasswords') ? JSON.parse(localStorage.getItem('savedPasswords')) : [];
+    
+      savedPasswords.push(passwordInput.value);
+      localStorage.setItem('savedPasswords', JSON.stringify(savedPasswords));
+    
+      // Şifreyi savedpasswords.txt dosyasına kaydet
+      saveToTextFile(passwordInput.value);
+    
+      alert('Şifre başarıyla kaydedildi!');
+      
+      // Kayıtlı şifreleri güncelle
+      showSavedPasswords();
+    }
+    
+    function saveToTextFile(password) {
+      var savedPasswordsText = localStorage.getItem('savedPasswordsText') || '';
+      savedPasswordsText += password + '\n';
+      localStorage.setItem('savedPasswordsText', savedPasswordsText);
+    }
+    
+    function showSavedPasswords() {
+      var savedPasswords = localStorage.getItem('savedPasswords');
+      var passwordList = document.getElementById('password-list');
+  
+      if (savedPasswords) {
+        savedPasswords = JSON.parse(savedPasswords);
+  
+        // Temizleme işlemi
+        passwordList.innerHTML = '';
+  
+        savedPasswords.forEach(function (password, index) {
+          var listItem = document.createElement('li');
+          listItem.textContent = password;
+  
+          // Çöp kutusu ve silme tuşu ekleme
+          var deleteButton = document.createElement('button');
+          deleteButton.textContent = 'Sil';
+          deleteButton.onclick = function () {
+            deletePassword(index);
+          };
+  
+          listItem.appendChild(deleteButton);
+          passwordList.appendChild(listItem);
+        });
+      }
+    }
+  
+    function deletePassword(index) {
+      var savedPasswords = localStorage.getItem('savedPasswords');
+      
+      if (savedPasswords) {
+        savedPasswords = JSON.parse(savedPasswords);
+  
+        // Şifreyi listeden ve depodan sil
+        savedPasswords.splice(index, 1);
+        localStorage.setItem('savedPasswords', JSON.stringify(savedPasswords));
+  
+        // Kayıtlı şifreleri güncelle
+        showSavedPasswords();
+      }
+    }
+
+    showSavedPasswords(); // Sayfa yüklendiğinde kayıtlı şifreleri göster
+
+    
+    function strengthenPassword() {
+      var passwordInput = document.getElementById('password');
+      var strengthenedPassword = generateRandomCharacters(passwordInput.value);
+      passwordInput.value = strengthenedPassword;
+    
+      // Güçlendikten sonra tekrar şifre güçlülüğünü kontrol et
+      checkPasswordStrength(strengthenedPassword);
+    }
+    
+    function generateRandomCharacters(password) {
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+      var strengthenedPassword = password;
+    
+      // Rastgele karakter ekleyerek şifreyi güçlendir
+      var randomCount = Math.floor(Math.random() * 10) + 1; // 1 ile 10 arasında rastgele sayı
+      for (var i = 0; i < randomCount; i++) {
+        var randomIndex = Math.floor(Math.random() * characters.length);
+        var randomCharacter = characters.charAt(randomIndex);
+        strengthenedPassword += randomCharacter;
+      }
+    
+      return strengthenedPassword;
+    }
+
+    function downloadPasswords() {
+      var savedPasswords = localStorage.getItem('savedPasswords');
+    
+      if (savedPasswords) {
+        savedPasswords = JSON.parse(savedPasswords);
+    
+        // Şifreleri bir metin dosyasına yaz
+        var passwordText = savedPasswords.join('\n');
+        
+        // Metin dosyasını indir
+        var blob = new Blob([passwordText], { type: 'text/plain' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'kayitli_sifreler.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    }
+  </script>
+</body>
+</html>
