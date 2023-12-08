@@ -34,12 +34,12 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    Not: PuTTY aynı zamanda .pem uzantısını .ppk uzantısına dönüştürmek için PuTTYgen programını içermektedir.
 
-8.   .pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel): 
+8.  .pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel): 
     
-      PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
+    PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
 
    
-   ![PuTTYgen](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/b1eb3dd8-1dfa-4638-b33f-fb5d1693368f)
+    ![PuTTYgen](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/b1eb3dd8-1dfa-4638-b33f-fb5d1693368f)
    
 
 9. **PuTTY ile SSH Bağlantısı Kurun:**
