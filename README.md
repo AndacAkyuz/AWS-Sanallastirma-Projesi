@@ -34,7 +34,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    Not: PuTTY aynı zamanda .pem uzantısını .ppk uzantısına dönüştürmek için PuTTYgen programını içermektedir.
 
-8. **  .pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel):  **
+8. .pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel): 
     
    PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
 
@@ -95,6 +95,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     docker ps
 
 **Websitenizi Kullanmaya Başlayın: Tarayıcınıza Public IPv4 adresini girerek websitenizi başarıyla kullanabilirsiniz.**
+
 
 
 ![website](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/eebd5900-3227-417c-8d99-d71ce830a849)
