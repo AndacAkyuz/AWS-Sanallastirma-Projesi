@@ -4,22 +4,22 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
 
 ## Kurulum Adımları
 
-1. **Amazon AWS Hesabı Oluşturun:**
+1. **Amazon AWS Hesabı Oluşturun:**  
    [AWS](https://aws.amazon.com/) üzerinden bir hesap oluşturun.
 
-2. **EC2 Dashboard'a Giriş Yapın:**
-   AWS ana sayfasında "EC2" seçeneğini belirleyin ve ardından "Launch Instance" butonuna tıklayın.
-   ![EC2 Dashboard](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/936d24ab-20c1-44f1-8979-fbae6ede04c5)
+2. **EC2 Dashboard'a Giriş Yapın:**  
+   AWS ana sayfasında "EC2" seçeneğini belirleyin ve ardından "Launch Instance" butonuna tıklayın.  
+   ![EC2 Dashboard](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/936d24ab-20c1-44f1-8979-fbae6ede04c5)  
 
-3. **Örnek Oluşturun:**
-   Amazon Linux Machine seçerek yeni bir örnek oluşturun.
-   ![Örnek Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/53821918-b645-485d-a521-42d196232399) 
+3. **Örnek Oluşturun:**  
+   Amazon Linux Machine seçerek yeni bir örnek oluşturun.  
+   ![Örnek Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/53821918-b645-485d-a521-42d196232399)  
 
-4. **Anahtar Oluşturun:**
-   "Create new key pair" seçeneğine tıklayarak bir anahtar oluşturun ve .ppk uzantılı olarak kaydedin.
-   Not: Eğer .pem uzantılı bir anahtara sahipseniz, PuTTYgen kullanarak .ppk uzantısına dönüştürün.
+4. **Anahtar Oluşturun:**  
+   "Create new key pair" seçeneğine tıklayarak bir anahtar oluşturun ve .ppk uzantılı olarak kaydedin.  
+   Not: Eğer .pem uzantılı bir anahtara sahipseniz, PuTTYgen kullanarak .ppk uzantısına dönüştürün.  
    ![Anahtar Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/731825e1-08e7-4f3f-9ef6-d1dac216adc8)
-
+  
 5. **HTTP ve HTTPS Protokollerine İzin Verin:**
    HTTP ve HTTPS protokollerini işaretleyip "Launch Instance" butonuna tıklayarak makine kurulumunu tamamlayın.
    ![Protokoller ve Başlatma](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/7a1a1902-cff6-4a26-b6bb-7a761cbfdc5e)
