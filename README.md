@@ -8,7 +8,8 @@ Bu proje, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma örneğini
 ![Dashboard EC2 seç](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/936d24ab-20c1-44f1-8979-fbae6ede04c5)
 3- **Instances Oluştur**: Amazon Linux Machine seçerek yeni bir örnek oluşturun.
 ![Instances Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/53821918-b645-485d-a521-42d196232399)  
-4- **Key Oluşturun**: Create new key pair tuşuna tıklayın ve ardından keyinize isim verip .ppk şeklinde keyinizi oluşturun.  Not: Eğer ppk yerine hazırda bir .pem uzantılı bir keyiniz varsa bu .pem uzantılı keyi .ppk uzantısına dönüştürmek için PuTTYgen kullanılacaktır.
+4- **Key Oluşturun**: Create new key pair tuşuna tıklayın ve ardından keyinize isim verip .ppk şeklinde keyinizi oluşturun.  
+Not: Eğer ppk yerine hazırda bir .pem uzantılı bir keyiniz varsa bu .pem uzantılı keyi .ppk uzantısına dönüştürmek için PuTTYgen kullanılacaktır.
 ![Key Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/731825e1-08e7-4f3f-9ef6-d1dac216adc8)
 5- **HTTP ve HTTPS protokollerine izin verme**: HTTP ve HTTPS protokollerinin tiklerini işaretleyip Launch Instance butonuna tıklayarak makine kurulumumuzu bitirin. Yaklaşık olarak 10-15 saniye sonra makineniz kullanıma hazır hale gelicektir.
 ![Protokoller ve Başlatma](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/7a1a1902-cff6-4a26-b6bb-7a761cbfdc5e)
