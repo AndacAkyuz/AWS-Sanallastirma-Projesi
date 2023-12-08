@@ -33,7 +33,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    Not: PuTTY aynı zamanda .pem uzantısını .ppk uzantısına dönüştürmek için PuTTYgen programını içermektedir.
 
-7. **.pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel):**
+7. **  .pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel):**
     
    PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
 
