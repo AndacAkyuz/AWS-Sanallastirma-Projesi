@@ -39,9 +39,8 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
 
    
-   ![PuTTYgen 1](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/b1eb3dd8-1dfa-4638-b33f-fb5d1693368f)
+   ![PuTTYgen](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/b1eb3dd8-1dfa-4638-b33f-fb5d1693368f)
    
-   ![PuTTYgen 2](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/ce94c95a-6d2c-49a2-ad78-26e6566a4f39)
 
 9. **PuTTY ile SSH Bağlantısı Kurun:**
    
