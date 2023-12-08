@@ -31,7 +31,7 @@ yüklemek kolay olsun diye tüm websitesi kodlarını google drive üzerine bulu
 
 **unzip bulut.zip**
 
-11. **Docker kurulumu**:
+10. **Docker kurulumu**:
 
 sudo yum update -y
 
@@ -43,7 +43,7 @@ sudo usermod -aG docker ec2-user
 
 ![Docker install](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/46f715c2-d4c3-47c4-a561-5877f5e18795)
 
-13. **Dockerfile Oluştur**:
+11. **Dockerfile Oluştur**:
 
 **vim Dockerfile** komutunu yazalım ve vim metin editörü ekranına girelim yazma moduna geçmezse Insert tuşuna basın.
 
@@ -53,7 +53,7 @@ COPY . /usr/local/apache2/htdocs/
 
 esc tuşuna bastıktan sonra :wq! yazıp enter'a bastıktan sonra vim editöründen çıkış yapın.
 
-15. **Docker Image Oluştur ve Çalıştır**:
+12. **Docker Image Oluştur ve Çalıştır**:
 docker build -t website .
 
 docker images
