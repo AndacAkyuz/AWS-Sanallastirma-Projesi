@@ -37,16 +37,17 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     
    PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
 
+   
    ![PuTTYgen 1](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/b1eb3dd8-1dfa-4638-b33f-fb5d1693368f)
    
    ![PuTTYgen 2](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/ce94c95a-6d2c-49a2-ad78-26e6566a4f39)
 
-8. **PuTTY ile SSH Bağlantısı Kurun:**
+9. **PuTTY ile SSH Bağlantısı Kurun:**
    
     PuTTY'i başlatın, AWS'deki makinenizin Public IPv4 adresini girin, .ppk dosyasını ekleyin ve bağlantıyı kurun.
    ![PuTTY](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c06a0762-9694-474a-b7c8-9240ca0a2771)
 
-9. **Bilgisayardaki Dosyaları Makineye Yükleyin:**
+10. **Bilgisayardaki Dosyaları Makineye Yükleyin:**
  
    mkdir website
    
@@ -56,7 +57,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    unzip bulut.zip
 
-10. **Docker Kurun**
+11. **Docker Kurun**
 
     sudo yum update -y
     
@@ -66,7 +67,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     
     sudo usermod -aG docker ec2-user
 
-11. **Dockerfile Oluşturun**
+12. **Dockerfile Oluşturun**
 
     vim Dockerfile
     
@@ -80,7 +81,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
 
     Çıkış yapmak için esc tuşuna basın, :wq! yazın ve enter tuşuna basın.
 
-12. **Docker Image Oluşturun ve Çalıştırın**
+13. **Docker Image Oluşturun ve Çalıştırın**
 
     docker build -t website .
     
@@ -91,3 +92,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     docker ps
 
 **Websitenizi Kullanmaya Başlayın: Tarayıcınıza Public IPv4 adresini girerek websitenizi başarıyla kullanabilirsiniz.**
+
+
+![website](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/eebd5900-3227-417c-8d99-d71ce830a849)
+
