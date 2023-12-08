@@ -82,7 +82,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     
     ___
     
-    Çıkış yapmak için esc tuşuna basın, :wq! yazın ve enter tuşuna basın.
+    Çıkış yapmak için esc tuşuna basın :wq! yazın ve enter tuşuna basın.
 
 14. **Docker Image Oluşturun ve Çalıştırın**
 
