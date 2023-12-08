@@ -13,7 +13,7 @@ Bu proje, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma örneğini
 
 Not: Eğer ppk yerine hazırda bir .pem uzantılı bir keyiniz varsa bu .pem uzantılı keyi .ppk uzantısına dönüştürmek için PuTTYgen kullanılacaktır.
 
-6. **HTTP ve HTTPS protokollerine izin verme**: HTTP ve HTTPS protokollerinin tiklerini işaretleyip Launch Instance butonuna tıklayarak makine kurulumumuzu bitirin. Yaklaşık olarak 10-15 saniye sonra makineniz kullanıma hazır hale gelicektir.
+5. **HTTP ve HTTPS protokollerine izin verme**: HTTP ve HTTPS protokollerinin tiklerini işaretleyip Launch Instance butonuna tıklayarak makine kurulumumuzu bitirin. Yaklaşık olarak 10-15 saniye sonra makineniz kullanıma hazır hale gelicektir.
 ![Protokoller ve Başlatma](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/7a1a1902-cff6-4a26-b6bb-7a761cbfdc5e)
 6.**PuTTY indir**: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html adresinden PuTTY indirelim ve kuralım.  
 Not: PuTTY uygulamasıyla birlikte .pem uzantısını değiştirebileceğimiz PuTTYgen programı da kurulmaktadır.
@@ -24,28 +24,44 @@ Not: PuTTY uygulamasıyla birlikte .pem uzantısını değiştirebileceğimiz Pu
 ![PuTTY](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c06a0762-9694-474a-b7c8-9240ca0a2771)
 9. **Bilgisayardaki dosyaları makineye yüklemek**:
 **mkdir website**
+
 **cd website**
+
 yüklemek kolay olsun diye tüm websitesi kodlarını google drive üzerine bulut.zip adıyla yüklemiştim bununda paylaşma bağlantısını kopyalayıp aşağıdaki formatı değiştirip kullanabilirsiniz.
+
 **wget --no-check-certificate -r 'https://drive.google.com/uc?export=download&id=12xMi5wTIbRvaCNVgPdodLJgI2-TdxRSI' -O bulut.zip**
+
 **unzip bulut.zip**
-10. **Docker kurulumu**: 
+
+11. **Docker kurulumu**: 
 sudo yum update -y
+
 sudo yum install docker -y
+
 sudo service docker start
+
 sudo usermod -aG docker ec2-user 
+
 ![Docker install](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/46f715c2-d4c3-47c4-a561-5877f5e18795)
 
-11. **Dockerfile Oluştur**:
+13. **Dockerfile Oluştur**:
 **vim Dockerfile** komutunu yazalım ve vim metin editörü ekranına girelim yazma moduna geçmezse Insert tuşuna basın.
+
 FROM httpd
+
 COPY . /usr/local/apache2/htdocs/
+
 esc tuşuna bastıktan sonra :wq! yazıp enter'a bastıktan sonra vim editöründen çıkış yapın.
 
-12. **Docker Image Oluştur ve Çalıştır**:
+15. **Docker Image Oluştur ve Çalıştır**:
 docker build -t website .
+
 docker images
+
 docker run -itd -p 80:80 --name website website
+
 docker ps
+
 ![Docker Image](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/5a18450a-f98b-471c-8447-64ebe95779ea)
 
 
