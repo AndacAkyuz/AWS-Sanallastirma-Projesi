@@ -1,4 +1,4 @@
-![resim](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c3f9a600-7c15-4da3-8141-675c0c77c42f)# AWS Sanallaştırma Projesi Dokümantasyonu
+# AWS Sanallaştırma Projesi Dokümantasyonu
 
 Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma projesinin adım adım uygulanışını içermektedir. Proje, kullanıcıların şifre güvenliğini analiz eden bir web tabanlı uygulamanın geliştirilmesini içermektedir. Ayrıca, bulut bilişim altyapısı ve Docker kullanılarak uygulama başarıyla sanallaştırılmıştır.
 
