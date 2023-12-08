@@ -74,13 +74,14 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     
     İçeriğe geçmek için Insert tuşuna basın ve aşağıdaki içeriği ekleyin:
     
-    '---'
+    ___
     
     FROM httpd
     
     COPY . /usr/local/apache2/htdocs/
     
     '---'
+    
     Çıkış yapmak için esc tuşuna basın, :wq! yazın ve enter tuşuna basın.
 
 14. **Docker Image Oluşturun ve Çalıştırın**
