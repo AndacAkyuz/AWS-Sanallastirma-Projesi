@@ -12,29 +12,28 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    ![EC2 Dashboard](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/936d24ab-20c1-44f1-8979-fbae6ede04c5)  
 
-4. **Örnek Oluşturun:**  
+3. **Örnek Oluşturun:**  
    Amazon Linux Machine seçerek yeni bir örnek oluşturun.
    
    ![Örnek Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/53821918-b645-485d-a521-42d196232399)  
 
-6. **Anahtar Oluşturun:**  
+4. **Anahtar Oluşturun:**  
    "Create new key pair" seçeneğine tıklayarak bir anahtar oluşturun ve .ppk uzantılı olarak kaydedin.  
    Not: Eğer .pem uzantılı bir anahtara sahipseniz, PuTTYgen kullanarak .ppk uzantısına dönüştürün.
-   
    ![Anahtar Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/731825e1-08e7-4f3f-9ef6-d1dac216adc8)
   
-8. **HTTP ve HTTPS Protokollerine İzin Verin:**
+5. **HTTP ve HTTPS Protokollerine İzin Verin:**
    HTTP ve HTTPS protokollerini işaretleyip "Launch Instance" butonuna tıklayarak makine kurulumunu tamamlayın.
    
    ![Protokoller ve Başlatma](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/7a1a1902-cff6-4a26-b6bb-7a761cbfdc5e)
 
-10. **PuTTY'i İndirin:**
+6. **PuTTY'i İndirin:**
     
    [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) adresinden PuTTY'i indirin ve kurun.
    
    Not: PuTTY aynı zamanda .pem uzantısını .ppk uzantısına dönüştürmek için PuTTYgen programını içermektedir.
 
-11. **.pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel):**
+7. **.pem Uzantılı Anahtarı .ppk'ya Dönüştürün (Opsiyonel):**
     
    PuTTYgen uygulamasını başlatın, "Load private key" seçeneğiyle .pem uzantılı anahtarı yükleyin ve .ppk dosyasını kaydedin.
 
@@ -42,12 +41,12 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    ![PuTTYgen 2](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/ce94c95a-6d2c-49a2-ad78-26e6566a4f39)
 
-12. **PuTTY ile SSH Bağlantısı Kurun:**
-    
-   PuTTY'i başlatın, AWS'deki makinenizin Public IPv4 adresini girin, .ppk dosyasını ekleyin ve bağlantıyı kurun.
+8. **PuTTY ile SSH Bağlantısı Kurun:**
+   
+    PuTTY'i başlatın, AWS'deki makinenizin Public IPv4 adresini girin, .ppk dosyasını ekleyin ve bağlantıyı kurun.
    ![PuTTY](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c06a0762-9694-474a-b7c8-9240ca0a2771)
 
-13. **Bilgisayardaki Dosyaları Makineye Yükleyin:**
+9. **Bilgisayardaki Dosyaları Makineye Yükleyin:**
  
    mkdir website
    
@@ -57,7 +56,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
    
    unzip bulut.zip
 
-11. **Docker Kurun**
+10. **Docker Kurun**
 
     sudo yum update -y
     
@@ -67,7 +66,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     
     sudo usermod -aG docker ec2-user
 
-13. **Dockerfile Oluşturun**
+11. **Dockerfile Oluşturun**
 
     vim Dockerfile
     
@@ -81,7 +80,7 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
 
     Çıkış yapmak için esc tuşuna basın, :wq! yazın ve enter tuşuna basın.
 
-15. **Docker Image Oluşturun ve Çalıştırın**
+12. **Docker Image Oluşturun ve Çalıştırın**
 
     docker build -t website .
     
