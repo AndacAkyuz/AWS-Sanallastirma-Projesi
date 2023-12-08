@@ -4,10 +4,13 @@ Bu proje, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma örneğini
 ## Kurulum Adımları
 
 1- **Amazon AWS Kayıt Ol**: [AWS](https://aws.amazon.com/) üzerinden hesap oluşturun.
+
 2- **Dashboard EC2 seç**:AWS ana sayfasına geldikten sonra EC2 seçeneğini seçin ardından Launch Instance butonuna tıklayın
 ![Dashboard EC2 seç](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/936d24ab-20c1-44f1-8979-fbae6ede04c5)
+
 3- **Instances Oluştur**: Amazon Linux Machine seçerek yeni bir örnek oluşturun.
-![Instances Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/53821918-b645-485d-a521-42d196232399)  
+![Instances Oluştur](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/53821918-b645-485d-a521-42d196232399) 
+
 4- **Key Oluşturun**: Create new key pair tuşuna tıklayın ve ardından keyinize isim verip .ppk şeklinde keyinizi oluşturun.  
 
 Not: Eğer ppk yerine hazırda bir .pem uzantılı bir keyiniz varsa bu .pem uzantılı keyi .ppk uzantısına dönüştürmek için PuTTYgen kullanılacaktır.
@@ -17,6 +20,7 @@ Not: Eğer ppk yerine hazırda bir .pem uzantılı bir keyiniz varsa bu .pem uza
 ![Protokoller ve Başlatma](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/7a1a1902-cff6-4a26-b6bb-7a761cbfdc5e)
 6- **PuTTY indir**: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html adresinden PuTTY indirelim ve kuralım.
 Not: PuTTY uygulamasıyla birlikte .pem uzantısını değiştirebileceğimiz PuTTYgen programı da kurulmaktadır.
+
 7- **Dosyanınz .pem uzantılı değil ise bu aşamayı atlayınız**: PuTTYgen uygulamasını başlatın ve File butonundan Load private key butonunu seçin. Daha sonra çıkan pencerede tamam'a tıklayıp Save Private Key butonuna tıklayın .ppk dosyanız hazır.
 ![PuTTYgen 1](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/b1eb3dd8-1dfa-4638-b33f-fb5d1693368f)
 ![PuTTYgen 2](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/ce94c95a-6d2c-49a2-ad78-26e6566a4f39)
