@@ -1,4 +1,4 @@
-# AWS Sanallaştırma Projesi Dokümantasyonu
+![resim](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c3f9a600-7c15-4da3-8141-675c0c77c42f)# AWS Sanallaştırma Projesi Dokümantasyonu
 
 Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma projesinin adım adım uygulanışını içermektedir. Proje, kullanıcıların şifre güvenliğini analiz eden bir web tabanlı uygulamanın geliştirilmesini içermektedir. Ayrıca, bulut bilişim altyapısı ve Docker kullanılarak uygulama başarıyla sanallaştırılmıştır.
 
@@ -73,16 +73,17 @@ Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma p
     vim Dockerfile
     
     İçeriğe geçmek için Insert tuşuna basın ve aşağıdaki içeriği ekleyin:
-
+    
+    "---"
     
     FROM httpd
     
     COPY . /usr/local/apache2/htdocs/
-
-
+    
+    "---"
     Çıkış yapmak için esc tuşuna basın, :wq! yazın ve enter tuşuna basın.
 
-13. **Docker Image Oluşturun ve Çalıştırın**
+14. **Docker Image Oluşturun ve Çalıştırın**
 
     docker build -t website .
     
