@@ -1,6 +1,6 @@
 # AWS Sanallaştırma Projesi Dokümantasyonu
 
-Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma projesinin adım adım uygulanışını içermektedir. Proje, kullanıcıların şifre güvenliğini analiz eden bir web tabanlı uygulamanın geliştirilmesini içermektedir. Ayrıca, bulut bilişim altyapısı ve Docker kullanılarak uygulama başarıyla sanallaştırılmıştır.
+Bu dokümantasyon, Amazon AWS üzerinde gerçekleştirilen bir sanallaştırma projesinin adım adım uygulanışını içermektedir. Proje, kullanıcıların şifre güvenliğini analiz eden bir web tabanlı uygulamanın geliştirilmesini içermektedir. Ayrıca, bulut bilişim altyapısı ve Docker kullanılarak Windows işletim sistemindeki uygulama başarıyla bulutta sanallaştırılmıştır.
 
 ## Kurulum Adımları
 
