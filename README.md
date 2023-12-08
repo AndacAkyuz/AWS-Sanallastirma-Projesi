@@ -20,6 +20,7 @@ Not: PuTTY uygulamasıyla birlikte .pem uzantısını değiştirebileceğimiz Pu
 8. **PuTTY Kullanarak SSH Bağlantısı**: EC2 instance'a SSH ile bağlanmak için PuTTY kullanın. PuTTY uygulamasını başlatıp AWS'deki makinenizin Public IPv4 adresini girin. Daha sonra Connections > SSH > AUTH > Credentials kısmından .ppk dosyamızı import edin. Session ekranına geri dönüp isterseniz her seferinde aynı aşamaları tek tek yapmamak için Saved Session kısmına isim verip save diyerek kaydedin ve Open diyerek başlatın. Gelen terminal ekranına user kısmına ec2-user diyip enter'a basın.
 ![PuTTY](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c06a0762-9694-474a-b7c8-9240ca0a2771)
 9. **Bilgisayardaki dosyaları makineye yüklemek**:
+
 **mkdir website**
 
 **cd website**
@@ -30,7 +31,8 @@ yüklemek kolay olsun diye tüm websitesi kodlarını google drive üzerine bulu
 
 **unzip bulut.zip**
 
-11. **Docker kurulumu**: 
+11. **Docker kurulumu**:
+
 sudo yum update -y
 
 sudo yum install docker -y
@@ -42,6 +44,7 @@ sudo usermod -aG docker ec2-user
 ![Docker install](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/46f715c2-d4c3-47c4-a561-5877f5e18795)
 
 13. **Dockerfile Oluştur**:
+
 **vim Dockerfile** komutunu yazalım ve vim metin editörü ekranına girelim yazma moduna geçmezse Insert tuşuna basın.
 
 FROM httpd
