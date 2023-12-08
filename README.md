@@ -26,6 +26,7 @@ Not: PuTTY uygulamasıyla birlikte .pem uzantısını değiştirebileceğimiz Pu
 ![PuTTYgen 2](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/ce94c95a-6d2c-49a2-ad78-26e6566a4f39)
 
 8- **PuTTY Kullanarak SSH Bağlantısı**: EC2 instance'a SSH ile bağlanmak için PuTTY kullanın. PuTTY uygulamasını başlatıp AWS'deki makinenizin Public IPv4 adresini girin. Daha sonra Connections > SSH > AUTH > Credentials kısmından .ppk dosyamızı import edin. Session ekranına geri dönüp isterseniz her seferinde aynı aşamaları tek tek yapmamak için Saved Session kısmına isim verip save diyerek kaydedin ve Open diyerek başlatın. Gelen terminal ekranına user kısmına ec2-user diyip enter'a basın.
+
 ![PuTTY](https://github.com/AndacAkyuz/AWS-Sanallastirma-Projesi/assets/91327557/c06a0762-9694-474a-b7c8-9240ca0a2771)
 
 9- **Bilgisayardaki dosyaları makineye yüklemek**:
